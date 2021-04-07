@@ -9,6 +9,9 @@ const SlicemasterGrid = styled.div`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    @media (min-width: 900px) {
+        grid-template-columns: auto auto;
+    }
 `;
 
 const SlicemasterStyles = styled.div`
@@ -40,7 +43,6 @@ const SlicemasterStyles = styled.div`
 
 export default function SlicemastersPage({ data, pageContext }) {
     const slicemasters = data.slicemasters.nodes;
-    console.log(slicemasters);
     return (
         <>
             <SEO title={`Slicemasters - Page ${pageContext.currentPage || 1}`} />
